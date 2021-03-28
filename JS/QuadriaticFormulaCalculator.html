@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<div onchange="wylicz()">
+<input type="number" id="valueA">
+<input type="number" id="valueB" >
+<input type="number" id="valueC" >
+</div>
+
+
+
+<div id="delta"></div>
+<div id="MZ"></div>
+<div id="wpis"></div>
+
+<script>
+
+
+function wylicz()
+{
+var wartoscA=document.getElementById("valueA").value;
+var wartoscB=document.getElementById("valueB").value;
+var wartoscC=document.getElementById("valueC").value;
+var delta=(wartoscB*wartoscB)+(-4*wartoscA*wartoscC);
+
+
+
+if(delta<0)
+{
+	document.getElementById("delta").innerHTML="delta<0";
+
+}
+
+if (delta==0)
+{
+	document.getElementById("delta").innerHTML="X<sub>0</sub> = "+(-wartoscB/(2*wartoscA));
+}
+
+if(delta>0)
+{
+	
+
+	document.getElementById("delta").innerHTML="X<sub>1</sub> = "+ 
+	((-wartoscB-Math.sqrt(delta))/(2*wartoscA))+
+	"</br>X<sub>2</sub> = "+ 
+	((-wartoscB+Math.sqrt(delta))/(2*wartoscA));
+	document.getElementById("wpis").innerHTML = "P = "+(-wartoscB/(2*wartoscA))+" Q = "+ (-delta/(4*wartoscA));
+}
+
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

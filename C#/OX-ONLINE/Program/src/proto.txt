@@ -1,0 +1,30 @@
+S - server
+C - client
+
+
+byte 0: Identyfikator pakietu
+--------------------------------------------------------------------------------
+
+S --> C get_move request
+'G'
+
+S <-- C get_move response
+'g'  byte(0-8)
+
+S --> C show_welcome
+'W'
+
+S --> C show_board
+'B' 9* byte('O','X',' ')
+
+S --> C show_player_turn
+'P' byte('O','X')
+
+S --> C show_move_error
+'M' 
+
+S --> C show_draw
+'D'
+
+S --> C show_winner
+'I' byte('O','X')
